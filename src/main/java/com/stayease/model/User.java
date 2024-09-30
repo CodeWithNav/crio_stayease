@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @Entity
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 public class User implements UserDetails {
     @Id
@@ -21,11 +21,11 @@ public class User implements UserDetails {
     private String id;
 
     @Column(unique = true, nullable = false)
-    final private String email;
+    private String email;
     @Column(nullable = false)
     private String password;
-    final private String firstName;
-    final private String lastName;
+    private String firstName;
+    private String lastName;
     @Enumerated(EnumType.STRING)
     private UserRole role = UserRole.CUSTOMER;
 
